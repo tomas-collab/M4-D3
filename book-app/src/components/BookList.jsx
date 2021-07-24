@@ -1,6 +1,6 @@
 
 import { Component } from "react";
-import {Container,FormControl,Row,Col} from 'react-bootstrap'
+import {FormControl,Form,Row,Col} from 'react-bootstrap'
 import Fantasy from './Fantasy.json'
 import SingleBook from "./SingleBook";
 
@@ -12,25 +12,30 @@ class BookList extends Component{
     }
     render(){
         return(
-            <Container className='fluid d-flex justify-content-center'>
+            <>
                 <Row>
-                <FormControl type="text" placeholder="Search" 
+                 <Form>Search Books
+                <FormControl 
+                className="my-4"
+                type="text"
+                 
                  value={this.state.value}
                  onChange={(e)=>this.setState({search:e.currentTarget.value.toLowerCase()})}
-
                 />
+                </Form>
                 </Row>
+                
                 <Row>
                 {
                      this.state.Books
-                     .filter(book=>book.title.toLowerCase().indexOf(this.state.search))
+                     .filter(book=> (book.title.toLowerCase().includes(this.state.search)!==-1))
                      .map(book=>
                         <Col className="col-col-lg-3" >
                         <SingleBook item={book}/>
                         </Col>   )
                 }      
      </Row>
-</Container>
+</>
         )
     }
 }

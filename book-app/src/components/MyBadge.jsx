@@ -1,10 +1,10 @@
-import {Button} from 'react-bootstrap'
+import {Badge} from 'react-bootstrap'
 
 const MyBadge = (props) =>(
-    <Button variant={props.color}>
+    <Badge variant={props.color}>
   {props.name}
   <span className="sr-only">unread messages</span>
-</Button>
+</Badge>
 
 )
 
