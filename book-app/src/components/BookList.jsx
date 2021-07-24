@@ -28,7 +28,7 @@ class BookList extends Component{
                 <Row>
                 {
                      this.state.Books
-                     .filter(book=> (book.title.toLowerCase().includes(this.state.search)!==-1))
+                     .filter(book=> (book.title.toLowerCase().includes(this.state.search)))
                      .map(book=>
                         <Col className="col-col-lg-3" >
                         <SingleBook item={book}/>
