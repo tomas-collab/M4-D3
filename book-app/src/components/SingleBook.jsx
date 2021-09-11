@@ -10,7 +10,7 @@ class SingleBook extends Component{
     render(){
         return(  
 
-             <Card style={{ width: '18rem' }} onClick={(e)=>this.setState({selected:!this.state.selected})}
+             <div className='card-image' onClick={(e)=>this.setState({selected:!this.state.selected})}
              style={{shadow:this.state.selected? '5px,5px,20px':'none'}}>
              <Card.Img variant="top" src={this.props.item.img} 
                 className='block mx-auto w-1/2'  style={{
@@ -21,7 +21,7 @@ class SingleBook extends Component{
                      <Card.Body>
                     <Card.Title>{this.props.item.title}</Card.Title>
                     </Card.Body>
-                </Card>
+                </div>
              
                 )
             }

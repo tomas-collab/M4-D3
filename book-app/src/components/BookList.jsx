@@ -30,7 +30,7 @@ class BookList extends Component{
                      this.state.Books
                      .filter(book=> (book.title.toLowerCase().includes(this.state.search)))
                      .map(book=>
-                        <Col className="col-col-lg-3" >
+                        <Col className="col-col-lg-3 card-image" >
                         <SingleBook item={book}/>
                         </Col>   )
                 }      
