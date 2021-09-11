@@ -11,15 +11,14 @@ class SingleBook extends Component{
         return(  
 
              <div className='card-image' onClick={(e)=>this.setState({selected:!this.state.selected})}
-             style={{shadow:this.state.selected? '5px,5px,20px':'none'}}>
-             <Card.Img variant="top" src={this.props.item.img} 
+             style={{border:this.state.selected? '1px solid green':'1px solid white'}}>
+             <Card.Img variant="top"  src={this.props.item.img} 
                 className='block mx-auto w-1/2'  style={{
-                        resizeMode: "contain",
-                        height:this.state.selected? 210: 200,
-                        width:this.state.selected?210: 200
+                       
+                        height:210,width:210
                       }}/>
                      <Card.Body>
-                    <Card.Title>{this.props.item.title}</Card.Title>
+                    <Card.Title style={{color:this.state.selected?"green":"black"}}>{this.props.item.title}</Card.Title>
                     </Card.Body>
                 </div>
              
